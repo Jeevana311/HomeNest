@@ -1,0 +1,572 @@
+.about-page {
+  min-height: 100vh;
+
+  background-color: var(--page-bg);
+  color: var(--heading);
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.about-hero {
+  min-height: 360px;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(17, 94, 89, 0.96),
+      rgba(17, 94, 89, 0.7),
+      rgba(17, 94, 89, 0.2)
+    ),
+    url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=88")
+      center / cover no-repeat;
+}
+
+.about-hero-content {
+  width: min(
+    var(--container-width),
+    calc(100% - 40px)
+  );
+
+  margin: auto;
+
+  padding: 60px 0;
+}
+
+.about-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  color: var(--secondary);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.about-eyebrow.teal {
+  color: var(--primary);
+}
+
+.about-hero h1 {
+  max-width: 720px;
+
+  margin: 0 0 15px;
+
+  color: #ffffff;
+
+  font-size: 46px;
+  font-weight: 800;
+
+  line-height: 1.15;
+}
+
+.about-hero p {
+  max-width: 670px;
+
+  margin: 0;
+
+  color: #e2e8f0;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+/* =========================================
+   GENERAL SECTION
+========================================= */
+
+.about-section {
+  width: min(
+    var(--container-width),
+    calc(100% - 40px)
+  );
+
+  margin: 0 auto;
+
+  padding: 75px 0;
+}
+
+.about-section h2 {
+  margin: 0 0 15px;
+
+  color: var(--heading);
+
+  font-size: 31px;
+  font-weight: 700;
+
+  line-height: 1.25;
+}
+
+.about-section p {
+  color: var(--body-text);
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+/* =========================================
+   INTRO
+========================================= */
+
+.about-intro-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.4fr)
+    minmax(300px, 0.7fr);
+
+  align-items: center;
+
+  gap: 60px;
+}
+
+.about-highlight-card {
+  padding: 35px;
+
+  background-color: #ffffff;
+
+  border: 1px solid var(--light-border);
+  border-radius: 14px;
+
+  box-shadow:
+    0 10px 30px
+    rgba(23, 32, 51, 0.05);
+}
+
+.about-highlight-card > span {
+  width: 58px;
+  height: 58px;
+
+  margin-bottom: 20px;
+
+  display: grid;
+  place-items: center;
+
+  color: #ffffff;
+  background-color: var(--primary);
+
+  border-radius: 50%;
+
+  font-size: 25px;
+}
+
+.about-highlight-card h3 {
+  margin: 0 0 10px;
+
+  color: var(--heading);
+
+  font-size: 20px;
+}
+
+.about-highlight-card p {
+  margin: 0;
+}
+
+/* =========================================
+   VALUES
+========================================= */
+
+.about-values-section {
+  background-color:
+    var(--section-background);
+}
+
+.about-center-heading {
+  max-width: 650px;
+
+  margin: 0 auto 40px;
+
+  text-align: center;
+}
+
+.about-center-heading p {
+  margin: 0;
+}
+
+.about-values-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  gap: 20px;
+}
+
+.about-values-grid article {
+  padding: 25px;
+
+  background-color: #ffffff;
+
+  border: 1px solid var(--light-border);
+  border-radius: 12px;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.about-values-grid article:hover {
+  transform: translateY(-5px);
+
+  border-color: var(--primary);
+
+  box-shadow:
+    0 12px 28px
+    rgba(23, 32, 51, 0.08);
+}
+
+.about-values-grid article > span {
+  width: 42px;
+  height: 42px;
+
+  margin-bottom: 17px;
+
+  display: grid;
+  place-items: center;
+
+  color: #ffffff;
+  background-color: var(--primary);
+
+  border-radius: 50%;
+
+  font-size: 18px;
+}
+
+.about-values-grid h3 {
+  margin: 0 0 8px;
+
+  color: var(--heading);
+
+  font-size: 17px;
+}
+
+.about-values-grid p {
+  margin: 0;
+
+  font-size: 11px;
+}
+
+/* =========================================
+   MISSION & VISION
+========================================= */
+
+.about-mission-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 24px;
+}
+
+.about-mission-card {
+  padding: 35px;
+
+  background-color: #ffffff;
+
+  border: 1px solid var(--light-border);
+  border-radius: 14px;
+
+  box-shadow:
+    0 8px 24px
+    rgba(23, 32, 51, 0.04);
+}
+
+.about-mission-card h2 {
+  font-size: 24px;
+}
+
+.about-mission-card p {
+  margin: 0;
+}
+
+/* =========================================
+   LOCATIONS
+========================================= */
+
+.about-locations-section {
+  background-color: var(--primary-dark);
+}
+
+.about-locations-section
+.about-center-heading h2 {
+  color: #ffffff;
+}
+
+.about-locations-section
+.about-center-heading p {
+  color: #dbe7e5;
+}
+
+.about-location-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: 20px;
+}
+
+.about-location-grid button {
+  min-height: 160px;
+
+  padding: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+  color: #ffffff;
+  background-color:
+    rgba(255, 255, 255, 0.07);
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.about-location-grid button:hover {
+  transform: translateY(-5px);
+
+  background-color:
+    rgba(255, 255, 255, 0.12);
+
+  border-color: var(--secondary);
+}
+
+.about-location-grid
+button
+> span {
+  color: var(--secondary);
+
+  font-size: 25px;
+}
+
+.about-location-grid strong {
+  font-size: 19px;
+}
+
+.about-location-grid small {
+  color: #dbe7e5;
+
+  font-size: 10px;
+}
+
+/* =========================================
+   CTA
+========================================= */
+
+.about-cta {
+  width: calc(100% - 40px);
+  max-width: var(--container-width);
+
+  margin: 80px auto;
+
+  padding: 55px;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(17, 94, 89, 0.98),
+      rgba(17, 94, 89, 0.68)
+    ),
+    url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=88")
+      center / cover no-repeat;
+}
+
+.about-cta > div {
+  max-width: 620px;
+}
+
+.about-cta h2 {
+  margin: 0 0 12px;
+
+  color: #ffffff;
+
+  font-size: 31px;
+}
+
+.about-cta p {
+  margin: 0 0 23px;
+
+  color: #e2e8f0;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+.about-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+.about-cta button {
+  min-height: 44px;
+
+  padding: 0 20px;
+
+  color: var(--heading);
+  background-color: var(--secondary);
+
+  border: 1px solid var(--secondary);
+  border-radius: 7px;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.about-cta button:hover {
+  background-color: #c58920;
+}
+
+.about-cta
+.about-secondary-button {
+  color: #ffffff;
+  background-color: transparent;
+
+  border-color: #ffffff;
+}
+
+.about-cta
+.about-secondary-button:hover {
+  color: var(--primary-dark);
+  background-color: #ffffff;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+  .about-intro-grid {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .about-values-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+  .about-hero {
+    min-height: 300px;
+  }
+
+  .about-hero-content {
+    width: calc(100% - 28px);
+
+    padding: 45px 0;
+  }
+
+  .about-hero h1 {
+    font-size: 34px;
+  }
+
+  .about-hero p {
+    font-size: 13px;
+  }
+
+  .about-section {
+    width: calc(100% - 28px);
+
+    padding: 55px 0;
+  }
+
+  .about-section h2 {
+    font-size: 27px;
+  }
+
+  .about-values-grid,
+  .about-mission-grid,
+  .about-location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-highlight-card,
+  .about-mission-card {
+    padding: 25px;
+  }
+
+  .about-cta {
+    width: calc(100% - 28px);
+
+    margin: 60px auto;
+
+    padding: 35px 25px;
+  }
+
+  .about-cta h2 {
+    font-size: 26px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+  .about-hero h1 {
+    font-size: 30px;
+  }
+
+  .about-center-heading h2 {
+    font-size: 25px;
+  }
+
+  .about-cta-buttons {
+    flex-direction: column;
+  }
+
+  .about-cta-buttons button {
+    width: 100%;
+  }
+}

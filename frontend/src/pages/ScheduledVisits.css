@@ -1,0 +1,651 @@
+.scheduled-visits-page {
+  min-height: 100vh;
+
+  background-color: var(--page-bg);
+  color: var(--heading);
+}
+
+.scheduled-visits-main {
+  width: min(
+    var(--container-width),
+    calc(100% - 40px)
+  );
+
+  margin: 0 auto;
+
+  padding: 58px 0 80px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.scheduled-visits-header {
+  margin-bottom: 30px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.scheduled-visits-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 8px;
+
+  color: var(--primary);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.scheduled-visits-header h1 {
+  margin: 0 0 8px;
+
+  color: var(--heading);
+
+  font-size: 34px;
+  font-weight: 800;
+}
+
+.scheduled-visits-header p {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: var(--body-text);
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+.schedule-new-visit-button {
+  min-height: 43px;
+
+  padding: 0 18px;
+
+  flex-shrink: 0;
+
+  color: #ffffff;
+  background-color: var(--primary);
+
+  border: 1px solid var(--primary);
+  border-radius: 7px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.schedule-new-visit-button:hover {
+  background-color: var(--primary-dark);
+
+  border-color: var(--primary-dark);
+}
+
+/* =========================
+   STATS
+========================= */
+
+.visit-stats {
+  margin-bottom: 28px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 17px;
+}
+
+.visit-stats article {
+  padding: 20px;
+
+  background-color: #ffffff;
+
+  border: 1px solid var(--light-border);
+  border-radius: 10px;
+}
+
+.visit-stats span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--body-text);
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.visit-stats strong {
+  color: var(--heading);
+
+  font-size: 24px;
+  font-weight: 800;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.scheduled-visits-content {
+  padding: 27px;
+
+  background-color: #ffffff;
+
+  border: 1px solid var(--light-border);
+  border-radius: 13px;
+
+  box-shadow:
+    0 7px 24px
+    rgba(23, 32, 51, 0.04);
+}
+
+.visits-toolbar {
+  margin-bottom: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.visits-toolbar h2 {
+  margin: 0 0 4px;
+
+  color: var(--heading);
+
+  font-size: 21px;
+}
+
+.visits-toolbar p {
+  margin: 0;
+
+  color: var(--body-text);
+
+  font-size: 10px;
+}
+
+/* =========================
+   FILTERS
+========================= */
+
+.visit-filter-buttons {
+  display: flex;
+
+  gap: 7px;
+}
+
+.visit-filter-buttons button {
+  min-height: 35px;
+
+  padding: 0 12px;
+
+  color: var(--body-text);
+  background-color: var(--page-bg);
+
+  border: 1px solid var(--light-border);
+  border-radius: 6px;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.visit-filter-buttons button:hover {
+  color: var(--primary);
+
+  border-color: var(--primary);
+}
+
+.visit-filter-buttons button.active {
+  color: #ffffff;
+  background-color: var(--primary);
+
+  border-color: var(--primary);
+}
+
+/* =========================
+   VISIT LIST
+========================= */
+
+.visits-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.visit-card {
+  display: grid;
+
+  grid-template-columns:
+    230px
+    minmax(0, 1fr);
+
+  overflow: hidden;
+
+  background-color: #ffffff;
+
+  border: 1px solid var(--light-border);
+  border-radius: 11px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.visit-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 9px 26px
+    rgba(23, 32, 51, 0.07);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.visit-image {
+  min-height: 260px;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.visit-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.visit-status {
+  padding: 6px 10px;
+
+  position: absolute;
+
+  top: 12px;
+  left: 12px;
+
+  color: #ffffff;
+
+  border-radius: 50px;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.4px;
+}
+
+.visit-status.requested {
+  background-color: #d99a2b;
+}
+
+.visit-status.confirmed {
+  background-color: var(--primary);
+}
+
+.visit-status.completed {
+  background-color: #16a34a;
+}
+
+.visit-status.cancelled {
+  background-color: #64748b;
+}
+
+/* =========================
+   DETAILS
+========================= */
+
+.visit-details {
+  padding: 22px;
+}
+
+.visit-title-row {
+  margin-bottom: 16px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.visit-title-row h3 {
+  margin: 0 0 5px;
+
+  color: var(--heading);
+
+  font-size: 18px;
+}
+
+.visit-title-row p {
+  margin: 0;
+
+  color: var(--body-text);
+
+  font-size: 10px;
+}
+
+.visit-view-property {
+  min-height: 35px;
+
+  padding: 0 13px;
+
+  flex-shrink: 0;
+
+  color: var(--primary);
+  background-color: #ffffff;
+
+  border: 1px solid var(--primary);
+  border-radius: 6px;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.visit-view-property:hover {
+  color: #ffffff;
+  background-color: var(--primary);
+}
+
+/* =========================
+   DATE INFORMATION
+========================= */
+
+.visit-date-box {
+  margin-bottom: 16px;
+
+  padding: 14px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 15px;
+
+  background-color: var(--page-bg);
+
+  border: 1px solid var(--light-border);
+  border-radius: 8px;
+}
+
+.visit-date-box span,
+.visit-owner span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--body-text);
+
+  font-size: 8px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+.visit-date-box strong,
+.visit-owner strong {
+  color: var(--heading);
+
+  font-size: 10px;
+}
+
+/* =========================
+   OWNER
+========================= */
+
+.visit-owner {
+  margin-bottom: 17px;
+
+  padding-bottom: 14px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+
+  border-bottom:
+    1px solid var(--light-border);
+}
+
+/* =========================
+   ACTIONS
+========================= */
+
+.visit-actions {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+.visit-actions button {
+  min-height: 34px;
+
+  padding: 0 12px;
+
+  color: var(--heading);
+  background-color: #ffffff;
+
+  border: 1px solid var(--light-border);
+  border-radius: 6px;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.visit-actions button:hover {
+  color: var(--primary);
+
+  border-color: var(--primary);
+}
+
+.visit-actions .cancel-visit-button,
+.visit-actions .remove-visit-button {
+  color: #dc2626;
+
+  border-color: #fecaca;
+}
+
+.visit-actions .cancel-visit-button:hover,
+.visit-actions .remove-visit-button:hover {
+  color: #ffffff;
+  background-color: #dc2626;
+
+  border-color: #dc2626;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.no-visits {
+  padding: 70px 20px;
+
+  text-align: center;
+}
+
+.no-visits > span {
+  width: 60px;
+  height: 60px;
+
+  margin: 0 auto 17px;
+
+  display: grid;
+  place-items: center;
+
+  color: #ffffff;
+  background-color: var(--primary);
+
+  border-radius: 50%;
+
+  font-size: 23px;
+}
+
+.no-visits h2 {
+  margin: 0 0 8px;
+
+  color: var(--heading);
+
+  font-size: 22px;
+}
+
+.no-visits p {
+  margin: 0 0 20px;
+
+  color: var(--body-text);
+
+  font-size: 11px;
+}
+
+.no-visits button {
+  min-height: 41px;
+
+  padding: 0 17px;
+
+  color: #ffffff;
+  background-color: var(--primary);
+
+  border: none;
+  border-radius: 7px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.no-visits button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+  .visit-stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .visit-card {
+    grid-template-columns:
+      190px
+      minmax(0, 1fr);
+  }
+
+  .visit-filter-buttons {
+    overflow-x: auto;
+  }
+
+  .visit-filter-buttons button {
+    flex-shrink: 0;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+  .scheduled-visits-main {
+    width: calc(100% - 28px);
+
+    padding: 42px 0 60px;
+  }
+
+  .scheduled-visits-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .scheduled-visits-header h1 {
+    font-size: 28px;
+  }
+
+  .visit-stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .scheduled-visits-content {
+    padding: 18px;
+  }
+
+  .visits-toolbar {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .visit-filter-buttons {
+    width: 100%;
+  }
+
+  .visit-card {
+    grid-template-columns: 1fr;
+  }
+
+  .visit-image {
+    height: 210px;
+    min-height: 0;
+  }
+
+  .visit-title-row {
+    flex-direction: column;
+  }
+
+  .visit-date-box {
+    grid-template-columns: 1fr;
+  }
+
+  .visit-owner {
+    grid-template-columns: 1fr;
+  }
+
+  .visit-actions {
+    display: grid;
+
+    grid-template-columns: 1fr;
+  }
+
+  .visit-actions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .visit-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-new-visit-button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: homenest-backend
+  datasource:
+    url: jdbc:h2:file:./data/homenest;AUTO_SERVER=TRUE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+server:
+  port: 8080
+app:
+  cors-origins: http://localhost:5173,http://127.0.0.1:5173

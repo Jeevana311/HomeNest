@@ -1,0 +1,633 @@
+.favorites-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--page-bg);
+  color: var(--heading);
+}
+
+/* =========================================
+   MAIN
+========================================= */
+
+.favorites-main {
+  width: min(
+    var(--container-width),
+    calc(100% - 40px)
+  );
+
+  flex: 1;
+
+  margin: 0 auto;
+  padding: 38px 0 80px;
+}
+
+/* =========================================
+   BREADCRUMB
+========================================= */
+
+.favorites-breadcrumb {
+  margin-bottom: 28px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--body-text);
+
+  font-size: 12px;
+}
+
+.favorites-breadcrumb a {
+  color: var(--primary);
+
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.favorites-breadcrumb a:hover {
+  color: var(--primary-dark);
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.favorites-heading {
+  margin-bottom: 35px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.favorites-label {
+  display: inline-block;
+
+  margin-bottom: 8px;
+
+  color: var(--primary);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.3px;
+}
+
+.favorites-heading h1 {
+  margin: 0 0 9px;
+
+  color: var(--heading);
+
+  font-size: 38px;
+  font-weight: 700;
+
+  line-height: 1.15;
+}
+
+.favorites-heading p {
+  margin: 0;
+
+  color: var(--body-text);
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+/* =========================================
+   FAVORITE COUNT
+========================================= */
+
+.favorites-count {
+  min-width: 145px;
+
+  padding: 14px 17px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  background-color: var(--card-bg);
+
+  border: 1px solid var(--light-border);
+  border-radius: 10px;
+
+  box-shadow:
+    0 5px 16px
+    rgba(23, 32, 51, 0.04);
+}
+
+.favorites-count strong {
+  color: var(--primary);
+
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.favorites-count span {
+  color: var(--heading);
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* =========================================
+   FAVORITES GRID
+========================================= */
+
+.favorites-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: 24px;
+}
+
+/* =========================================
+   PROPERTY CARD
+========================================= */
+
+.favorite-property-card {
+  overflow: hidden;
+
+  background-color: var(--card-bg);
+
+  border: 1px solid var(--light-border);
+  border-radius: 14px;
+
+  box-shadow:
+    0 5px 18px
+    rgba(23, 32, 51, 0.05);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.favorite-property-card:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    rgba(15, 118, 110, 0.35);
+
+  box-shadow:
+    0 16px 34px
+    rgba(23, 32, 51, 0.1);
+}
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.favorite-image-wrapper {
+  height: 225px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  cursor: pointer;
+}
+
+.favorite-image-wrapper img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.35s ease;
+}
+
+.favorite-property-card:hover
+.favorite-image-wrapper img {
+  transform: scale(1.04);
+}
+
+/* =========================================
+   BADGE
+========================================= */
+
+.favorite-badge {
+  position: absolute;
+
+  top: 13px;
+  left: 13px;
+
+  padding: 6px 11px;
+
+  color: var(--heading);
+  background-color: var(--secondary);
+
+  border-radius: 50px;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+/* =========================================
+   REMOVE FAVORITE BUTTON
+========================================= */
+
+.remove-favorite-button {
+  width: 39px;
+  height: 39px;
+
+  position: absolute;
+
+  top: 12px;
+  right: 12px;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--error);
+
+  background-color:
+    rgba(255, 255, 255, 0.94);
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.75);
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 3px 10px
+    rgba(23, 32, 51, 0.12);
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.remove-favorite-button:hover {
+  transform: scale(1.08);
+
+  color: #ffffff;
+  background-color: var(--error);
+}
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.favorite-card-content {
+  padding: 20px;
+}
+
+.favorite-card-top {
+  margin-bottom: 9px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.favorite-category {
+  color: var(--primary);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.7px;
+
+  text-transform: uppercase;
+}
+
+.favorite-mode {
+  padding: 5px 8px;
+
+  color: var(--primary);
+
+  background-color:
+    rgba(15, 118, 110, 0.06);
+
+  border: 1px solid
+    rgba(15, 118, 110, 0.15);
+
+  border-radius: 5px;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+
+.favorite-card-content h2 {
+  margin: 0 0 8px;
+
+  color: var(--heading);
+
+  font-size: 19px;
+  font-weight: 700;
+
+  line-height: 1.3;
+}
+
+.favorite-location {
+  margin: 0 0 15px;
+
+  color: var(--body-text);
+
+  font-size: 12px;
+}
+
+/* =========================================
+   PROPERTY DETAILS
+========================================= */
+
+.favorite-details {
+  min-height: 40px;
+
+  margin-bottom: 18px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 7px;
+}
+
+.favorite-details span {
+  padding: 6px 8px;
+
+  color: var(--heading);
+  background-color: var(--page-bg);
+
+  border: 1px solid var(--light-border);
+  border-radius: 5px;
+
+  font-size: 10px;
+  font-weight: 500;
+}
+
+/* =========================================
+   CARD FOOTER
+========================================= */
+
+.favorite-card-footer {
+  padding-top: 15px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  border-top: 1px solid var(--light-border);
+}
+
+.favorite-card-footer small {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--body-text);
+
+  font-size: 9px;
+}
+
+.favorite-card-footer strong {
+  color: var(--primary);
+
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.favorite-card-footer button {
+  min-height: 40px;
+
+  padding: 0 14px;
+
+  color: var(--primary);
+  background-color: #ffffff;
+
+  border: 1px solid var(--primary);
+  border-radius: 7px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.favorite-card-footer button:hover {
+  color: #ffffff;
+  background-color: var(--primary);
+}
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.favorites-empty {
+  width: 100%;
+  max-width: 650px;
+
+  margin: 45px auto 20px;
+  padding: 60px 35px;
+
+  text-align: center;
+
+  background-color: var(--card-bg);
+
+  border: 1px solid var(--light-border);
+  border-radius: 16px;
+
+  box-shadow:
+    0 10px 30px
+    rgba(23, 32, 51, 0.05);
+}
+
+.favorites-empty-icon {
+  width: 72px;
+  height: 72px;
+
+  margin: 0 auto 20px;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--primary);
+
+  background-color:
+    rgba(15, 118, 110, 0.06);
+
+  border: 1px solid
+    rgba(15, 118, 110, 0.15);
+
+  border-radius: 50%;
+
+  font-size: 32px;
+}
+
+.favorites-empty h2 {
+  margin: 0 0 10px;
+
+  color: var(--heading);
+
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.favorites-empty p {
+  max-width: 440px;
+
+  margin: 0 auto 24px;
+
+  color: var(--body-text);
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+.favorites-empty button {
+  min-height: 44px;
+
+  padding: 0 20px;
+
+  color: #ffffff;
+  background-color: var(--primary);
+
+  border: 1px solid var(--primary);
+  border-radius: 7px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.favorites-empty button:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+  .favorites-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+  .favorites-main {
+    width: calc(100% - 28px);
+
+    padding: 28px 0 55px;
+  }
+
+  .favorites-breadcrumb {
+    margin-bottom: 22px;
+  }
+
+  .favorites-heading {
+    margin-bottom: 28px;
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 18px;
+  }
+
+  .favorites-heading h1 {
+    font-size: 30px;
+  }
+
+  .favorites-heading p {
+    font-size: 13px;
+  }
+
+  .favorites-count {
+    width: 100%;
+  }
+
+  .favorites-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .favorite-image-wrapper {
+    height: 235px;
+  }
+
+  .favorites-empty {
+    margin-top: 30px;
+
+    padding: 45px 22px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+  .favorites-heading h1 {
+    font-size: 27px;
+  }
+
+  .favorite-image-wrapper {
+    height: 205px;
+  }
+
+  .favorite-card-footer {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+  .favorite-card-footer button {
+    width: 100%;
+  }
+
+  .favorites-empty {
+    padding: 38px 18px;
+  }
+
+  .favorites-empty h2 {
+    font-size: 22px;
+  }
+}

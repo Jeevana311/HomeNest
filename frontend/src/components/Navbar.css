@@ -1,0 +1,411 @@
+.main-navbar {
+  width: 100%;
+  min-height: 72px;
+
+  padding: 0 5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  background-color: #ffffff;
+
+  border-bottom: 1px solid #edf0f1;
+
+  position: relative;
+  z-index: 100;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.main-navbar-logo {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  flex-shrink: 0;
+
+  color: var(--heading);
+
+  font-size: 22px;
+  font-weight: 800;
+
+  line-height: 1;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+}
+
+.main-navbar-logo span {
+  color: var(--primary);
+
+  font-size: 25px;
+  font-weight: 800;
+}
+
+/* =========================
+   NAVIGATION LINKS
+========================= */
+
+.main-navbar-links {
+  display: flex;
+  align-items: center;
+
+  gap: 27px;
+}
+
+.nav-link {
+  position: relative;
+
+  padding: 27px 0 24px;
+
+  color: var(--heading);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  line-height: 1;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
+.nav-link.active {
+  color: var(--primary);
+}
+
+.nav-link.active::after {
+  content: "";
+
+  height: 2px;
+
+  position: absolute;
+
+  right: 0;
+  bottom: 16px;
+  left: 0;
+
+  background-color: var(--primary);
+
+  border-radius: 10px;
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.main-navbar-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  flex-shrink: 0;
+}
+
+/* =========================
+   ACCOUNT
+========================= */
+
+.navbar-account-link {
+  min-height: 40px;
+
+  padding: 0 8px;
+
+  color: var(--heading);
+  background-color: transparent;
+
+  border: none;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition: color 0.2s ease;
+}
+
+.navbar-account-link:hover {
+  color: var(--primary);
+}
+
+/* =========================
+   LOGIN
+========================= */
+
+.navbar-login-button {
+  min-height: 40px;
+
+  padding: 0 20px;
+
+  color: #ffffff;
+  background-color: var(--primary);
+
+  border: 1px solid var(--primary);
+  border-radius: 7px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.navbar-login-button:hover {
+  background-color: var(--primary-dark);
+
+  border-color: var(--primary-dark);
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 5px 14px
+    rgba(15, 118, 110, 0.18);
+}
+
+/* =========================
+   LIST PROPERTY
+========================= */
+
+.navbar-list-property {
+  min-height: 40px;
+
+  padding: 0 17px;
+
+  color: #ffffff;
+  background-color: var(--primary);
+
+  border: 1px solid var(--primary);
+  border-radius: 7px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.navbar-list-property:hover {
+  background-color: var(--primary-dark);
+
+  border-color: var(--primary-dark);
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 5px 14px
+    rgba(15, 118, 110, 0.18);
+}
+
+/* =========================
+   LARGE TABLET / SMALL LAPTOP
+========================= */
+
+@media (max-width: 1200px) {
+  .main-navbar {
+    padding: 0 3%;
+    gap: 16px;
+  }
+
+  .main-navbar-links {
+    gap: 18px;
+  }
+
+  .nav-link {
+    font-size: 12px;
+  }
+
+  .main-navbar-actions {
+    gap: 8px;
+  }
+
+  .navbar-account-link {
+    padding: 0 5px;
+
+    font-size: 12px;
+  }
+
+  .navbar-list-property,
+  .navbar-login-button {
+    padding: 0 13px;
+
+    font-size: 11px;
+  }
+}
+
+/* =========================
+   SPLIT SCREEN / TABLET
+========================= */
+
+@media (max-width: 1000px) {
+  .main-navbar {
+    padding: 0 18px;
+
+    gap: 12px;
+  }
+
+  .main-navbar-logo {
+    font-size: 20px;
+  }
+
+  .main-navbar-logo span {
+    font-size: 23px;
+  }
+
+  .main-navbar-links {
+    gap: 13px;
+  }
+
+  .nav-link {
+    padding: 27px 0 24px;
+
+    font-size: 11px;
+  }
+
+  .main-navbar-actions {
+    gap: 6px;
+  }
+
+  .navbar-account-link {
+    padding: 0 4px;
+
+    font-size: 11px;
+  }
+
+  .navbar-list-property,
+  .navbar-login-button {
+    min-height: 38px;
+
+    padding: 0 10px;
+
+    font-size: 10px;
+  }
+}
+
+/* =========================
+   NARROW TABLET
+========================= */
+
+@media (max-width: 820px) {
+  .main-navbar {
+    padding: 0 14px;
+
+    gap: 9px;
+  }
+
+  .main-navbar-logo {
+    font-size: 18px;
+  }
+
+  .main-navbar-logo span {
+    font-size: 21px;
+  }
+
+  .main-navbar-links {
+    gap: 9px;
+  }
+
+  .nav-link {
+    font-size: 10px;
+  }
+
+  .navbar-account-link {
+    display: none;
+  }
+
+  .navbar-list-property,
+  .navbar-login-button {
+    padding: 0 9px;
+
+    font-size: 9px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+  .main-navbar {
+    min-height: 64px;
+
+    padding: 0 18px;
+
+    gap: 12px;
+  }
+
+  .main-navbar-links {
+    display: none;
+  }
+
+  .main-navbar-logo {
+    font-size: 19px;
+  }
+
+  .main-navbar-logo span {
+    font-size: 22px;
+  }
+
+  .navbar-account-link {
+    display: none;
+  }
+
+  .navbar-list-property,
+  .navbar-login-button {
+    min-height: 38px;
+
+    padding: 0 12px;
+
+    font-size: 11px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 390px) {
+  .main-navbar {
+    padding: 0 14px;
+  }
+
+  .main-navbar-logo {
+    font-size: 18px;
+  }
+
+  .navbar-list-property,
+  .navbar-login-button {
+    padding: 0 10px;
+
+    font-size: 10px;
+  }
+}

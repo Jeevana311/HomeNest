@@ -1,0 +1,653 @@
+.my-enquiries-page {
+  min-height: 100vh;
+
+  background-color: var(--page-bg);
+  color: var(--heading);
+}
+
+.my-enquiries-main {
+  width: min(
+    var(--container-width),
+    calc(100% - 40px)
+  );
+
+  margin: 0 auto;
+
+  padding: 58px 0 80px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.my-enquiries-header {
+  margin-bottom: 30px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.my-enquiries-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 8px;
+
+  color: var(--primary);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.my-enquiries-header h1 {
+  margin: 0 0 8px;
+
+  color: var(--heading);
+
+  font-size: 34px;
+  font-weight: 800;
+}
+
+.my-enquiries-header p {
+  margin: 0;
+
+  color: var(--body-text);
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+.browse-properties-button {
+  min-height: 43px;
+
+  padding: 0 18px;
+
+  flex-shrink: 0;
+
+  color: #ffffff;
+  background-color: var(--primary);
+
+  border: 1px solid var(--primary);
+  border-radius: 7px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.browse-properties-button:hover {
+  background-color: var(--primary-dark);
+
+  border-color: var(--primary-dark);
+}
+
+/* =========================
+   STATS
+========================= */
+
+.enquiry-stats {
+  margin-bottom: 28px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 17px;
+}
+
+.enquiry-stats article {
+  padding: 20px;
+
+  background-color: #ffffff;
+
+  border: 1px solid var(--light-border);
+  border-radius: 10px;
+}
+
+.enquiry-stats span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--body-text);
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.enquiry-stats strong {
+  color: var(--heading);
+
+  font-size: 24px;
+  font-weight: 800;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.my-enquiries-content {
+  padding: 27px;
+
+  background-color: #ffffff;
+
+  border: 1px solid var(--light-border);
+  border-radius: 13px;
+
+  box-shadow:
+    0 7px 24px
+    rgba(23, 32, 51, 0.04);
+}
+
+.enquiries-toolbar {
+  margin-bottom: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.enquiries-toolbar h2 {
+  margin: 0 0 4px;
+
+  color: var(--heading);
+
+  font-size: 21px;
+}
+
+.enquiries-toolbar p {
+  margin: 0;
+
+  color: var(--body-text);
+
+  font-size: 10px;
+}
+
+/* =========================
+   FILTERS
+========================= */
+
+.enquiry-filter-buttons {
+  display: flex;
+
+  gap: 7px;
+}
+
+.enquiry-filter-buttons button {
+  min-height: 35px;
+
+  padding: 0 13px;
+
+  color: var(--body-text);
+  background-color: var(--page-bg);
+
+  border: 1px solid var(--light-border);
+  border-radius: 6px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.enquiry-filter-buttons button:hover {
+  color: var(--primary);
+
+  border-color: var(--primary);
+}
+
+.enquiry-filter-buttons button.active {
+  color: #ffffff;
+  background-color: var(--primary);
+
+  border-color: var(--primary);
+}
+
+/* =========================
+   ENQUIRY CARD
+========================= */
+
+.enquiry-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.enquiry-card {
+  display: grid;
+
+  grid-template-columns:
+    230px
+    minmax(0, 1fr);
+
+  overflow: hidden;
+
+  background-color: #ffffff;
+
+  border: 1px solid var(--light-border);
+  border-radius: 11px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.enquiry-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 9px 26px
+    rgba(23, 32, 51, 0.07);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.enquiry-property-image {
+  min-height: 230px;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.enquiry-property-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.enquiry-status {
+  padding: 6px 10px;
+
+  position: absolute;
+
+  top: 12px;
+  left: 12px;
+
+  color: #ffffff;
+
+  border-radius: 50px;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.4px;
+}
+
+.enquiry-status.pending {
+  background-color: #d99a2b;
+}
+
+.enquiry-status.contacted {
+  background-color: var(--primary);
+}
+
+.enquiry-status.closed {
+  background-color: #64748b;
+}
+
+/* =========================
+   DETAILS
+========================= */
+
+.enquiry-details {
+  padding: 22px;
+}
+
+.enquiry-top-row {
+  margin-bottom: 17px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.enquiry-date {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: var(--body-text);
+
+  font-size: 9px;
+}
+
+.enquiry-top-row h3 {
+  margin: 0 0 5px;
+
+  color: var(--heading);
+
+  font-size: 17px;
+}
+
+.enquiry-location {
+  margin: 0;
+
+  color: var(--body-text);
+
+  font-size: 10px;
+}
+
+.view-enquiry-property {
+  min-height: 35px;
+
+  padding: 0 13px;
+
+  flex-shrink: 0;
+
+  color: var(--primary);
+  background-color: #ffffff;
+
+  border: 1px solid var(--primary);
+  border-radius: 6px;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.view-enquiry-property:hover {
+  color: #ffffff;
+
+  background-color: var(--primary);
+}
+
+/* =========================
+   OWNER INFO
+========================= */
+
+.enquiry-owner-info {
+  margin-bottom: 16px;
+
+  padding: 13px 0;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+
+  border-top: 1px solid var(--light-border);
+  border-bottom: 1px solid var(--light-border);
+}
+
+.enquiry-owner-info span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--body-text);
+
+  font-size: 8px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+.enquiry-owner-info strong {
+  color: var(--heading);
+
+  font-size: 10px;
+}
+
+/* =========================
+   MESSAGE
+========================= */
+
+.enquiry-message {
+  margin-bottom: 16px;
+}
+
+.enquiry-message span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: var(--heading);
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.enquiry-message p {
+  margin: 0;
+
+  color: var(--body-text);
+
+  font-size: 10px;
+
+  line-height: 1.7;
+}
+
+/* =========================
+   ACTIONS
+========================= */
+
+.enquiry-actions {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+.enquiry-actions button {
+  min-height: 34px;
+
+  padding: 0 12px;
+
+  color: var(--heading);
+  background-color: #ffffff;
+
+  border: 1px solid var(--light-border);
+  border-radius: 6px;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.enquiry-actions button:hover {
+  color: var(--primary);
+
+  border-color: var(--primary);
+}
+
+.enquiry-actions
+.remove-enquiry-button {
+  color: #dc2626;
+
+  border-color: #fecaca;
+}
+
+.enquiry-actions
+.remove-enquiry-button:hover {
+  color: #ffffff;
+  background-color: #dc2626;
+
+  border-color: #dc2626;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.no-enquiries {
+  padding: 70px 20px;
+
+  text-align: center;
+}
+
+.no-enquiries > span {
+  width: 60px;
+  height: 60px;
+
+  margin: 0 auto 17px;
+
+  display: grid;
+  place-items: center;
+
+  color: #ffffff;
+  background-color: var(--primary);
+
+  border-radius: 50%;
+
+  font-size: 22px;
+}
+
+.no-enquiries h2 {
+  margin: 0 0 8px;
+
+  color: var(--heading);
+
+  font-size: 22px;
+}
+
+.no-enquiries p {
+  margin: 0 0 20px;
+
+  color: var(--body-text);
+
+  font-size: 11px;
+}
+
+.no-enquiries button {
+  min-height: 41px;
+
+  padding: 0 17px;
+
+  color: #ffffff;
+  background-color: var(--primary);
+
+  border: none;
+  border-radius: 7px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.no-enquiries button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .enquiry-stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .enquiry-card {
+    grid-template-columns: 190px 1fr;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+  .my-enquiries-main {
+    width: calc(100% - 28px);
+
+    padding: 42px 0 60px;
+  }
+
+  .my-enquiries-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .my-enquiries-header h1 {
+    font-size: 28px;
+  }
+
+  .enquiry-stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .my-enquiries-content {
+    padding: 18px;
+  }
+
+  .enquiries-toolbar {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .enquiry-filter-buttons {
+    width: 100%;
+
+    overflow-x: auto;
+  }
+
+  .enquiry-filter-buttons button {
+    flex-shrink: 0;
+  }
+
+  .enquiry-card {
+    grid-template-columns: 1fr;
+  }
+
+  .enquiry-property-image {
+    height: 210px;
+    min-height: 0;
+  }
+
+  .enquiry-top-row {
+    flex-direction: column;
+  }
+
+  .enquiry-owner-info {
+    grid-template-columns: 1fr;
+  }
+
+  .enquiry-actions {
+    display: grid;
+
+    grid-template-columns: 1fr;
+  }
+
+  .enquiry-actions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .enquiry-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .browse-properties-button {
+    width: 100%;
+  }
+}
