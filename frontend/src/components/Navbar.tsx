@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { getCurrentUser } from "../utils/authStorage";
 import "./Navbar.css";
@@ -12,6 +13,7 @@ function Navbar({
   showAccount = true,
 }: NavbarProps) {
   const navigate = useNavigate();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const currentUser = getCurrentUser();
   const isLoggedIn = Boolean(currentUser);
@@ -22,6 +24,11 @@ function Navbar({
     isActive: boolean;
   }) => {
     return isActive ? "nav-link active" : "nav-link";
+  };
+
+  const navigateTo = (path: string) => {
+    setIsMenuOpen(false);
+    navigate(path);
   };
 
   return (
@@ -87,6 +94,19 @@ function Navbar({
         )}
       </nav>
 
+      <button
+        type="button"
+        className="navbar-menu-toggle"
+        aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+        aria-expanded={isMenuOpen}
+        aria-controls="mobile-navigation"
+        onClick={() => setIsMenuOpen((isOpen) => !isOpen)}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+
       {/* Right Side Actions */}
       <div className="main-navbar-actions">
         {isLoggedIn ? (
@@ -95,7 +115,7 @@ function Navbar({
               <button
                 type="button"
                 className="navbar-account-link"
-                onClick={() => navigate("/account")}
+                onClick={() => navigateTo("/account")}
               >
                 Account
               </button>
@@ -105,9 +125,7 @@ function Navbar({
               <button
                 type="button"
                 className="navbar-list-property"
-                onClick={() =>
-                  navigate("/list-property")
-                }
+                onClick={() => navigateTo("/list-property")}
               >
                 List Property
               </button>
@@ -117,12 +135,59 @@ function Navbar({
           <button
             type="button"
             className="navbar-login-button"
-            onClick={() => navigate("/login")}
+            onClick={() => navigateTo("/login")}
           >
             Login
           </button>
         )}
       </div>
+
+      {isMenuOpen && (
+        <nav
+          id="mobile-navigation"
+          className="mobile-navbar-menu"
+          aria-label="Mobile navigation"
+        >
+          <NavLink to="/" end onClick={() => setIsMenuOpen(false)}>
+            Home
+          </NavLink>
+          <NavLink to="/properties" onClick={() => setIsMenuOpen(false)}>
+            Properties
+          </NavLink>
+          <NavLink to="/project-documentation" onClick={() => setIsMenuOpen(false)}>
+            Project Documentation
+          </NavLink>
+          <NavLink to="/new-projects" onClick={() => setIsMenuOpen(false)}>
+            New Projects
+          </NavLink>
+          <NavLink to="/about" onClick={() => setIsMenuOpen(false)}>
+            About Us
+          </NavLink>
+          <NavLink to="/contact" onClick={() => setIsMenuOpen(false)}>
+            Contact Us
+          </NavLink>
+          {isLoggedIn && (
+            <NavLink to="/favorites" onClick={() => setIsMenuOpen(false)}>
+              Favorites
+            </NavLink>
+          )}
+          {isLoggedIn && showAccount && (
+            <button type="button" onClick={() => navigateTo("/account")}>
+              Account
+            </button>
+          )}
+          {isLoggedIn && showListProperty && (
+            <button type="button" onClick={() => navigateTo("/list-property")}>
+              List Property
+            </button>
+          )}
+          {!isLoggedIn && (
+            <button type="button" onClick={() => navigateTo("/login")}>
+              Login
+            </button>
+          )}
+        </nav>
+      )}
     </header>
   );
 }
